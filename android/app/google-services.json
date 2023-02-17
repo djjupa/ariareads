@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "117049398055",
+    "project_id": "ariareads-dal",
+    "storage_bucket": "ariareads-dal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117049398055:android:a607ebab34270bec37cf02",
+        "android_client_info": {
+          "package_name": "com.ariareads.dal.ariareads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117049398055-q95m6gaglbause2imgmn517rf7aqr9b2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4Z5rXAONiQR7uhjNc5cOUYDgpDklHIvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117049398055-q95m6gaglbause2imgmn517rf7aqr9b2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117049398055-f6865bl504q8rt7g469273vj76gevp1l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ariareads.dal.ariareads"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
