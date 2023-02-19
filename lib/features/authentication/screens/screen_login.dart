@@ -1,6 +1,6 @@
-import '../../constants.dart';
-import 'package:flutter/material.dart';
+import 'package:ariareads/constants/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -19,6 +19,10 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(DAL_appName),
+        leading: const Icon(Icons.book_online_outlined),
+      ),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
@@ -88,7 +92,7 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 }
 
-  /*
+/*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,7 +164,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
    */
-
 
 /*
 class ScreenLogin extends StatelessWidget {

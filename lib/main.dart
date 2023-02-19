@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:ariareads/features/authentication/screens/screen_login.dart';
+import 'package:ariareads/features/screens/home_screen.dart';
+import 'package:ariareads/utils/themes/theme.dart';
+import 'package:ariareads/widgets/rounded_button.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+
 import 'firebase_options.dart';
 
-import 'authentication/screens/screen_login.dart';
-import 'package:ariareads/constants.dart';
-import 'package:ariareads/screens/home_screen.dart';
-import 'package:ariareads/widgets/rounded_button.dart';
-
-
-void main() async {
+void main() {
   // Initialize Firebase
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(const MyApp());
@@ -27,13 +26,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Aria Reads',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+      theme: DAL_AppTheme.lightTheme,
+      /*scaffoldBackgroundColor: Colors.white,
+        brightness: Brightness.light,
+        primarySwatch: Colors.red,
         textTheme: Theme.of(context).textTheme.apply(
-          displayColor: kBlackColor,
-        ),
-      ),
-      home: const SignInScreen(),
+              displayColor: kBlackColor,
+
+
+         */
+      darkTheme: DAL_AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      home: SignInScreen(),
     );
   }
 }
@@ -44,6 +48,9 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("ariareads"),
+      ),
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
@@ -79,7 +86,7 @@ class WelcomeScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return HomeScreen();
+                        return const HomeScreen();
                       },
                     ),
                   );
