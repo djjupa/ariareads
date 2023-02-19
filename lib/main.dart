@@ -1,4 +1,4 @@
-import 'package:ariareads/features/authentication/screens/screen_login.dart';
+import 'package:ariareads/features/authentication/screens/screen_splash.dart';
 import 'package:ariareads/features/screens/home_screen.dart';
 import 'package:ariareads/utils/themes/theme.dart';
 import 'package:ariareads/widgets/rounded_button.dart';
@@ -37,7 +37,8 @@ class MyApp extends StatelessWidget {
          */
       darkTheme: DAL_AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: SignInScreen(),
+      home: const SplashScreen(),
+      //home: const SignInScreen(),
     );
   }
 }
@@ -51,49 +52,52 @@ class WelcomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("ariareads"),
       ),
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/Bitmap.png"),
-            fit: BoxFit.fill,
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/Bitmap.png"),
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RichText(
-              text: TextSpan(
-                style: Theme.of(context).textTheme.displayMedium,
-                children: const [
-                  TextSpan(
-                    text: "aria",
-                  ),
-                  TextSpan(
-                    text: "reads",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .6,
-              child: RoundedButton(
-                text: "login",
-                fontSize: 20,
-                press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const HomeScreen();
-                      },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RichText(
+                text: TextSpan(
+                  style: Theme.of(context).textTheme.displayMedium,
+                  children: const [
+                    TextSpan(
+                      text: "aria",
                     ),
-                  );
-                },
+                    TextSpan(
+                      text: "reads",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .6,
+                child: RoundedButton(
+                  text: "login",
+                  fontSize: 20,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const HomeScreen();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
