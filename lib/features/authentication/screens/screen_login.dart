@@ -1,15 +1,16 @@
+import 'package:ariareads/constants/constant_images.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class ScreenSignIn extends StatefulWidget {
+  const ScreenSignIn({super.key});
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _ScreenSignInState createState() => _ScreenSignInState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _ScreenSignInState extends State<ScreenSignIn> {
   final _auth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
 
@@ -27,7 +28,7 @@ class _SignInScreenState extends State<SignInScreen> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/Bitmap.png"),
+            image: AssetImage(dalScreenSplashMJ),
             fit: BoxFit.fill,
           ),
         ),
