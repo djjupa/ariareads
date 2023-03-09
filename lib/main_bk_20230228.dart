@@ -1,5 +1,5 @@
-import 'package:ariareads/features/authentication/screens/screen_auth.dart';
-import 'package:ariareads/utils/themes/theme.dart';
+import 'package:ariareads/features/authentication/screens/screen_onboarding.dart';
+import 'package:ariareads/utils/themes/widget_themes/text_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -24,13 +24,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Aria Reads',
-      theme: DALAppTheme.lightTheme,
+      theme: ThemeData(
+        brightness: Brightness.light,
+        textTheme: DALTextTheme.lightTextTheme,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber)
+            .copyWith(secondary: Colors.purple),
+      ),
       //theme: DALAppTheme.lightTheme,
       //darkTheme: DALAppTheme.darkTheme,
       //themeMode: ThemeMode.system,
       //home: SplashScreen(),
-      home: const ScreenAuthentication(),
-      //home: ScreenOnboarding(),
+      //home: const ScreenSignIn(),
+      home: ScreenOnboarding(),
     );
   }
 }
@@ -44,7 +49,6 @@ class WelcomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("ariareads"),
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(

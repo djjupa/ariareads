@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
  */
 class DALAppTheme {
   // Making the constructor private (as per the end of this video https://www.youtube.com/watch?v=Q9FosAdX2U4&t=0s
-  //DALAppTheme._();
+  DALAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
@@ -18,19 +18,18 @@ class DALAppTheme {
     //secondaryHeaderColor: dalColorSecondaryLight,
     //scaffoldBackgroundColor: dalColorBackgroundLight,
     fontFamily: 'Schoolbell',
-    appBarTheme: const AppBarTheme(
-      color: dalColorPrimaryLight,
-      elevation: 10,
-      iconTheme: IconThemeData(
-        color: dalColorForegroundLight,
-      ),
-    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: dalColorSecondaryLight,
         foregroundColor: dalColorForegroundLight,
+        textStyle: const TextStyle(
+          fontFamily: 'Monserrat',
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+        ),
+        padding: const EdgeInsets.all(25),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2.0),
+          borderRadius: BorderRadius.circular(18.0),
         ),
       ),
     ),
@@ -38,7 +37,6 @@ class DALAppTheme {
       primary: dalColorPrimaryLight,
       secondary: dalColorPrimaryLight,
       tertiary: dalColorTertiaryLight,
-      //brightness: Brightness.dark,
     ),
   );
 
@@ -72,5 +70,52 @@ class DALAppTheme {
       tertiary: dalColorTertiaryDark,
       //brightness: Brightness.dark,
     ),
+  );
+
+  static ThemeData testTheme = ThemeData(
+    brightness: Brightness.light,
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(
+        fontFamily: 'Monserrat',
+        fontWeight: FontWeight.normal,
+        fontSize: 48,
+        color: Colors.black,
+      ),
+      displayMedium: TextStyle(
+        fontFamily: 'Monserrat',
+        fontWeight: FontWeight.normal,
+        fontSize: 38,
+        color: Colors.amber,
+      ),
+      bodyMedium: TextStyle(
+        fontFamily: 'Nunito',
+        fontWeight: FontWeight.normal,
+        fontSize: 23,
+        color: Colors.purple,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: dalColorSecondaryLight,
+        foregroundColor: dalColorForegroundLight,
+        textStyle: const TextStyle(
+          fontFamily: 'Monserrat',
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+        ),
+        padding: const EdgeInsets.all(25),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+        ),
+      ),
+    ),
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: Colors.amber,
+    ).copyWith(
+      primary: dalColorPrimaryLight,
+      secondary: dalColorPrimaryLight,
+      tertiary: dalColorTertiaryLight,
+    ),
+    fontFamily: 'Monserrat',
   );
 }
